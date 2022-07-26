@@ -6,13 +6,14 @@ public class Main {
     {
         Tree intTree = new Tree();
         System.out.println(intTree.insert(20));
-        intTree.insert(25);
-        intTree.insert(2);
-        intTree.insert(16);
-        intTree.insert(10);
-        intTree.insert(24);
-        intTree.insert(40);
-        intTree.insert(22);
+        System.out.println(intTree.insert(25));
+        System.out.println(intTree.insert(2));
+        System.out.println(intTree.insert(16));
+        System.out.println(intTree.insert(10));
+        System.out.println(intTree.insert(24));
+        System.out.println(intTree.insert(40));
+        System.out.println(intTree.insert(22));
+        System.out.println(intTree.insert(25));
 
         intTree.traversePreOrder();
         System.out.println();

@@ -16,17 +16,18 @@ public class TreeNode {
         if (value < data) {
             if (leftChild == null) {
                 leftChild = new TreeNode(value);
+                return true;
             } else {
-                leftChild.insert(value);
+                return leftChild.insert(value);
             }
         } else {
             if (rightChild == null) {
                 rightChild = new TreeNode(value);
+                return true;
             } else {
-                rightChild.insert(value);
+                return rightChild.insert(value);
             }
         }
-        return true;
     }
 
     public void traverseInOrder() {

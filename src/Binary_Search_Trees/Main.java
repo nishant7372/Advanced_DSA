@@ -14,6 +14,8 @@ public class Main {
         System.out.println(intTree.insert(40));
         System.out.println(intTree.insert(22));
         System.out.println(intTree.insert(25));
+        System.out.println(intTree.insert(43));
+        System.out.println(intTree.insert(35));
 
         intTree.traversePreOrder();
         System.out.println();

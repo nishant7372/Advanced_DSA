@@ -14,26 +14,22 @@ public class Tree {
             return root.insert(value);
     }
 
-    public void traverseInOrder()
-    {
+    public void traverseInOrder() {
         if(root!=null)
             root.traverseInOrder();
     }
 
-    public void traversePreOrder()
-    {
+    public void traversePreOrder() {
         if(root!=null)
             root.traversePreOrder();
     }
 
-    public void traversePostOrder()
-    {
+    public void traversePostOrder() {
         if(root!=null)
             root.traversePostOrder();
     }
 
-    public void traverseLevelOrder()
-    {
+    public void traverseLevelOrder() {
         if(root!=null) {
             Queue<TreeNode> queue = new LinkedList<>();
             queue.add(root);
@@ -44,8 +40,7 @@ public class Tree {
         }
     }
 
-    public TreeNode get(int value)
-    {
+    public TreeNode get(int value) {
         if(root==null)
             return null;
         else{
@@ -53,8 +48,7 @@ public class Tree {
         }
     }
 
-    public TreeNode min()
-    {
+    public TreeNode min() {
         if(root==null)
         return null;
         else {
@@ -62,8 +56,7 @@ public class Tree {
         }
     }
 
-    public TreeNode max()
-    {
+    public TreeNode max() {
         if(root==null)
             return null;
         else {

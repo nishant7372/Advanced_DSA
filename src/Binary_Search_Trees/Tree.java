@@ -1,5 +1,8 @@
 package Binary_Search_Trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Tree {
     private TreeNode root;
 
@@ -27,6 +30,18 @@ public class Tree {
     {
         if(root!=null)
             root.traversePostOrder();
+    }
+
+    public void traverseLevelOrder()
+    {
+        if(root!=null) {
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                TreeNode presentNode = queue.remove();
+                presentNode.traverseLevelOrder(queue);
+            }
+        }
     }
 
     public TreeNode get(int value)

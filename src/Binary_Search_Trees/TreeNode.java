@@ -1,5 +1,7 @@
 package Binary_Search_Trees;
 
+import java.util.Queue;
+
 public class TreeNode {
     private int data;
     private TreeNode leftChild;
@@ -60,6 +62,14 @@ public class TreeNode {
         System.out.print(data + ", ");
     }
 
+    public void traverseLevelOrder(Queue<TreeNode> queue)
+    {
+        System.out.print(data + ", ");
+        if(this.leftChild!=null)
+            queue.add(leftChild);
+        if(this.rightChild!=null)
+            queue.add(rightChild);
+    }
 
     public TreeNode get(int value) {
         if (data == value)

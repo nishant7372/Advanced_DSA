@@ -23,6 +23,8 @@ public class Main {
         System.out.println();
         intTree.traversePostOrder();
         System.out.println();
+        intTree.traverseLevelOrder();
+        System.out.println();
 
         System.out.println(intTree.get(16));
         System.out.println(intTree.get(40));

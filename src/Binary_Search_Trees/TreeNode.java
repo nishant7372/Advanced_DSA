@@ -65,9 +65,9 @@ public class TreeNode {
     public void traverseLevelOrder(Queue<TreeNode> queue) {
         System.out.print(data + ", ");
         if(this.leftChild!=null)
-            queue.add(leftChild);
+            queue.add(this.leftChild);
         if(this.rightChild!=null)
-            queue.add(rightChild);
+            queue.add(this.rightChild);
     }
 
     public TreeNode get(int value) {

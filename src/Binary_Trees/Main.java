@@ -31,9 +31,15 @@ public class Main {
         System.out.println(binaryTree.search(6));
         System.out.println(binaryTree.search(100));
 
-        System.out.println(binaryTree.get(2));
-        System.out.println(binaryTree.get(10));
-        System.out.println(binaryTree.get(20));
-        System.out.println(binaryTree.get(100));
+        System.out.println(binaryTree.delete(2));
+        binaryTree.traverseLevelOrder();
+        System.out.println(binaryTree.delete(10));
+        binaryTree.traverseLevelOrder();
+        System.out.println(binaryTree.delete(20));
+        binaryTree.traverseLevelOrder();
+        System.out.println(binaryTree.delete(100));
+        binaryTree.traverseLevelOrder();
+
+
     }
 }

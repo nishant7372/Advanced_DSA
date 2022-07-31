@@ -53,6 +53,26 @@ public class TreeNode {
         return null;
     }
 
+    public void getDeepestNode(Queue<TreeNode> queue){
+        if(leftChild!=null)
+            queue.add(leftChild);
+        if(rightChild!=null)
+            queue.add(rightChild);
+    }
+
+    public void deleteDeepestNode(Queue<TreeNode> queue,TreeNode prevNode){
+        if(this.leftChild==null){
+            prevNode.rightChild=null;
+        }
+        else if(this.rightChild==null){
+            this.leftChild=null;
+        }
+        else{
+            queue.add(this.leftChild);
+            queue.add(this.rightChild);
+        }
+    }
+
     public void traversePreOrder(){
         System.out.print(this.data+",");
         if(this.leftChild!=null)

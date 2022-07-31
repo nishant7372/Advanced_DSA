@@ -6,7 +6,7 @@ import java.util.Queue;
 public class Tree {
     private TreeNode root;
 
-    public void insert(int val) {
+    public boolean insert(int val) {
         if(root==null)
             root=new TreeNode(val);
         else {
@@ -19,6 +19,7 @@ public class Tree {
                     break;
             }
         }
+        return true;
     }
 
     public boolean search(int value){
@@ -36,11 +37,19 @@ public class Tree {
         return false;
     }
 
-    private TreeNode get(int value){
-        if(root==null)
-            return null;
-        else
-            return root.get(value);
+    private TreeNode get(int value) {
+        if (root != null) {
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                TreeNode presentNode = queue.remove();
+                if (presentNode.getData() == value)
+                    return presentNode;
+                else
+                    presentNode.get(queue, value);
+            }
+        }
+        return null;
     }
 
     private TreeNode getDeepestNode(){
@@ -59,26 +68,26 @@ public class Tree {
         return null;
     }
 
-    private boolean deleteDeepestNode(){
-        if(root!=null){
+    private void deleteDeepestNode(){
+        if(root!=null) {
             Queue<TreeNode> queue = new LinkedList<>();
-            TreeNode prevNode,presentNode = null;
+            TreeNode prevNode, presentNode = null;
             queue.add(root);
-            while(!queue.isEmpty()){
-                prevNode=presentNode;
-                presentNode=queue.remove();
-                presentNode.deleteDeepestNode(queue,prevNode);
+            while (!queue.isEmpty()) {
+                prevNode = presentNode;
+                presentNode = queue.remove();
+                presentNode.deleteDeepestNode(queue, prevNode);
             }
-            return true;
         }
-        return false;
     }
 
     public boolean delete(int value){
         TreeNode temp = get(value);
         if(temp!=null) {
-            temp.setData(getDeepestNode().getData());
-            return deleteDeepestNode();
+            if(getDeepestNode()!=null)
+                temp.setData(getDeepestNode().getData());
+            deleteDeepestNode();
+            return true;
         }
         return false;
     }

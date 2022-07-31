@@ -38,19 +38,11 @@ public class TreeNode {
         return false;
     }
 
-    public TreeNode get(int value){
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(this);
-        while(!queue.isEmpty()) {
-            TreeNode presentNode = queue.remove();
-            if(presentNode.data==value)
-                return presentNode;
-            if(presentNode.leftChild!=null)
-                queue.add(presentNode.leftChild);
-            if(presentNode.rightChild!=null)
-                queue.add(presentNode.rightChild);
-        }
-        return null;
+    public void get(Queue<TreeNode> queue,int value) {
+        if (leftChild != null)
+            queue.add(leftChild);
+        if (rightChild != null)
+            queue.add(rightChild);
     }
 
     public void getDeepestNode(Queue<TreeNode> queue){

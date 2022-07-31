@@ -1,45 +1,113 @@
 package Binary_Trees;
 
+import javax.sound.midi.SysexMessage;
+import java.util.Scanner;
+
 public class Main {
+    private static final Tree binaryTree = new Tree();
+    private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Tree binaryTree = new Tree();
-        binaryTree.insert(1);
-        binaryTree.insert(2);
-        binaryTree.insert(3);
-        binaryTree.insert(4);
-        binaryTree.insert(5);
-        binaryTree.insert(6);
-        binaryTree.insert(7);
-        binaryTree.insert(8);
-        binaryTree.insert(9);
-        binaryTree.insert(10);
-        binaryTree.insert(11);
-        binaryTree.insert(12);
-        binaryTree.insert(13);
-        binaryTree.insert(14);
-        binaryTree.insert(15);
-        System.out.print("PreOrder : ");
-        binaryTree.traversePreOrder();
-        System.out.print("\nInOrder : ");
-        binaryTree.traverseInOrder();
-        System.out.print("\nPostOrder : ");
-        binaryTree.traversePostOrder();
-        System.out.print("\nLevelOrder : ");
-        binaryTree.traverseLevelOrder();
-        System.out.println();
-        System.out.println(binaryTree.search(10));
-        System.out.println(binaryTree.search(6));
-        System.out.println(binaryTree.search(100));
+       showAvailableOptions();
+       availableOptions();
+       while(true) {
+           switch (scan.nextInt()) {
+               case 0:
+                   availableOptions();
+                   break;
+               case 1:
+                   enterMessage();
+                   boolean b = binaryTree.insert(scan.nextInt());
+                   if (b)
+                       successfulMessage("inserted");
+                   queryMessage("Level Order Traversal");
+                   binaryTree.traverseLevelOrder();
+                   System.out.println();
+                   break;
+               case 2:
+                   enterMessage();
+                   b = binaryTree.delete(scan.nextInt());
+                   if (b)
+                       successfulMessage("deleted");
+                   else
+                       unSuccessfulMessage();
+                   queryMessage("Level Order Traversal");
+                   binaryTree.traverseLevelOrder();
+                   System.out.println();
+                   break;
+               case 3:
+                   enterMessage();
+                   b = binaryTree.search(scan.nextInt());
+                   if (b)
+                       successfulMessage("search");
+                   else
+                       unSuccessfulMessage();
+                   break;
+               case 4:
+                   queryMessage("Pre Order Traversal");
+                   binaryTree.traversePreOrder();
+                   System.out.println();
+                   break;
+               case 5:
+                   queryMessage("In Order Traversal");
+                   binaryTree.traverseInOrder();
+                   System.out.println();
+                   break;
+               case 6:
+                   queryMessage("Post Order Traversal");
+                   binaryTree.traversePostOrder();
+                   System.out.println();
+                   break;
+               case 7:
+                   queryMessage("Level Order Traversal");
+                   binaryTree.traverseLevelOrder();
+                   System.out.println();
+                   break;
+               case 8:
+                   System.exit(1);
+                   break;
+               default:
+                   System.out.println("Invalid Choice\n");
+                   enterMessage();
+                   break;
+           }
+           showAvailableOptions();
+       }
+    }
 
-        System.out.println(binaryTree.delete(2));
-        binaryTree.traverseLevelOrder();
-        System.out.println(binaryTree.delete(10));
-        binaryTree.traverseLevelOrder();
-        System.out.println(binaryTree.delete(20));
-        binaryTree.traverseLevelOrder();
-        System.out.println(binaryTree.delete(100));
-        binaryTree.traverseLevelOrder();
+    private static void availableOptions(){
+        System.out.print("""
+                Press -\s
+                1 - Insert an Item
+                2 - Delete an Item
+                3 - Search an Item
+                4 - PreOrder Traversal
+                5 - InOrder Traversal
+                6 - PostOrder Traversal
+                7 - LevelOrder Traversal
+                8 - exit
+                Enter your Choice:\s""");
+    }
 
+    private static void enterMessage(){
+        System.out.print("Enter data: ");
+    }
 
+    private static void successfulMessage(String query){
+        if(query.equals("search"))
+            System.out.println("Data is present");
+        else
+            System.out.println("Data is successfully "+query+"\n");
+    }
+
+    private static void unSuccessfulMessage(){
+        System.out.println("Data is not found\n");
+    }
+
+    private static void showAvailableOptions(){
+        System.out.println("------------------Press 0 - to view Available Options-------------------\n");
+    }
+
+    private static void queryMessage(String query) {
+        System.out.print(query+": ");
     }
 }

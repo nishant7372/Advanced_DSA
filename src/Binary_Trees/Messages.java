@@ -1,5 +1,6 @@
 package Binary_Trees;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Messages {
@@ -7,12 +8,19 @@ public class Messages {
     public String enterMessage(String query){
         System.out.print("Enter "+query+": ");
         if(query.equals("name")) {
-            scan.nextLine();
             return scan.nextLine();
         }
-        else{
-            int choice = scan.nextInt();
-            return choice+"";
+        else {
+            try {
+                int choice = scan.nextInt();
+                scan.nextLine();
+                return choice+"";
+            }
+            catch (InputMismatchException e){
+                System.out.println("Input Mismatch Exception...");
+                scan.nextLine();
+            }
+            return enterMessage(query);
         }
     }
 
@@ -53,11 +61,23 @@ public class Messages {
                 5 - InOrder Traversal
                 6 - PostOrder Traversal
                 7 - LevelOrder Traversal
-                8 - Exit...
-                Enter your Choice:\s""");
+                8 - Exit...\s
+                """);
         }
     }
     public void queryMessage(String query) {
-        System.out.print(query+": ");
+        if(query.equals("\n"))
+            System.out.println();
+        else if(query.endsWith("\n")){
+            query = query.substring(0,query.length()-1);
+            if(query.endsWith("...")){
+                System.out.println(query);
+            }
+            else{
+                System.out.println(query + ":");
+            }
+        }
+        else
+            System.out.print(query+": ");
     }
 }

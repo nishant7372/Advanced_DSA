@@ -187,7 +187,7 @@ public class Tree {
                     flag = false;
                     break;
                 default:
-                    msg.queryMessage("Invalid Choice\n");
+                    msg.queryMessage("Invalid Choice...\n");
                     break;
             }
         }

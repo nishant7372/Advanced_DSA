@@ -18,7 +18,7 @@ public class Main {
                 case 4 -> viewList();
                 case 5 -> viewTree(getTree(msg.enterMessage("name")));
                 case 6 -> System.exit(1);
-                default -> msg.queryMessage("Invalid choice\n");
+                default -> msg.queryMessage("Invalid choice...\n");
             }
         }
     }
@@ -66,7 +66,7 @@ public class Main {
         if(binaryTree!=null) {
             msg.queryMessage("Level Order Traversal");
             binaryTree.traverseLevelOrder();
-            msg.queryMessage("/n");
+            msg.queryMessage("\n");
         }
         else
             msg.unSuccessfulMessage("Tree");

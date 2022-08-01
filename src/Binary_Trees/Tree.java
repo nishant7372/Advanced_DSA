@@ -4,7 +4,18 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Tree {
+    private final Messages msg = new Messages();
     private TreeNode root;
+
+    public String getName() {
+        return name;
+    }
+
+    public Tree(String name){
+        this.name=name;
+    }
+
+    private final String name;
 
     public boolean insert(int val) {
         if(root==null)
@@ -116,5 +127,73 @@ public class Tree {
             TreeNode presentNode = queue.remove();
             presentNode.traverseLevelOrder(queue);
         }
+    }
+
+    public void update() {
+        msg.showAvailableOptions();
+        msg.availableOptions("Data");
+        boolean flag = true;
+        while (flag) {
+            switch (Integer.parseInt(msg.enterMessage("your choice"))) {
+                case 0:
+                    msg.availableOptions("Data");
+                    break;
+                case 1:
+                    boolean b = this.insert(Integer.parseInt(msg.enterMessage("data")));
+                    if (b)
+                        msg.successfulMessage("Data", "inserted");
+                    msg.queryMessage("Level Order Traversal");
+                    this.traverseLevelOrder();
+                    msg.queryMessage("\n");
+                    break;
+                case 2:
+                    b = this.delete(Integer.parseInt(msg.enterMessage("data")));
+                    if (b)
+                        msg.successfulMessage("Data", "deleted");
+                    else
+                        msg.unSuccessfulMessage("Data");
+                    msg.queryMessage("Level Order Traversal");
+                    this.traverseLevelOrder();
+                    msg.queryMessage("\n");
+                    break;
+                case 3:
+                    b = this.search(Integer.parseInt(msg.enterMessage("data")));
+                    if (b)
+                        msg.successfulMessage("Data", "search");
+                    else
+                        msg.unSuccessfulMessage("Data");
+                    break;
+                case 4:
+                    msg.queryMessage("Pre Order Traversal");
+                    this.traversePreOrder();
+                    msg.queryMessage("\n");
+                    break;
+                case 5:
+                    msg.queryMessage("In Order Traversal");
+                    this.traverseInOrder();
+                    msg.queryMessage("\n");
+                    break;
+                case 6:
+                    msg.queryMessage("Post Order Traversal");
+                    this.traversePostOrder();
+                    msg.queryMessage("\n");
+                    break;
+                case 7:
+                    msg.queryMessage("Level Order Traversal");
+                    this.traverseLevelOrder();
+                    msg.queryMessage("\n");
+                    break;
+                case 8:
+                    flag = false;
+                    break;
+                default:
+                    msg.queryMessage("Invalid Choice\n");
+                    break;
+            }
+        }
+    }
+    @Override
+    public String toString() {
+        return name;
     }
 }

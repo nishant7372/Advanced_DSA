@@ -2,7 +2,7 @@
 
 #### The whole Implementation is done using Class in Java.
 
-## Operations Available:
+## Operations Available:-
 
 
 ## Managing TreeList-

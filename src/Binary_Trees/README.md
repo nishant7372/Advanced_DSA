@@ -5,16 +5,16 @@
 ## ***Operations Available:-***
 
 
-## *Managing TreeList*-
- ###  *✅ Creation of a New Tree*
- ###  *❌ Deletion of an Existing Tree*
- ###  *🔍 Searching of Tree*
- ###  *👀 View Tree*
+## &emsp; *Managing TreeList*-
+ ###  &emsp; &emsp; *✅ Creation of a New Tree*
+ ###  &emsp; &emsp; *❌ Deletion of an Existing Tree*
+ ###  &emsp; &emsp; *🔍 Searching of Tree*
+ ###  &emsp; &emsp; *👀 View Tree*
 
 
-## *Managing Tree*-
- ###  *✅ Insertion of TreeNodes*
- ###  *❌ Deletion of TreeNodes*
- ###  *🔍 Searching of TreeNodes*
- ###  *👀 View Tree and TreeNodes*
+## &emsp; *Managing Tree*-
+ ###  &emsp; &emsp; *✅ Insertion of TreeNodes*
+ ###  &emsp; &emsp; *❌ Deletion of TreeNodes*
+ ###  &emsp; &emsp; *🔍 Searching of TreeNodes*
+ ###  &emsp; &emsp; *👀 View Tree and TreeNodes*
 

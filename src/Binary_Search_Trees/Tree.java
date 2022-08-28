@@ -64,4 +64,8 @@ public class Tree {
         }
     }
 
+    public void deleteNode(int key){
+        if(root!=null)
+            root = root.deleteNode(key);
+    }
 }

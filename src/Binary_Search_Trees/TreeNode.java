@@ -92,7 +92,7 @@ public class TreeNode {
             return leftChild.min();
     }
 
-   public TreeNode max() {
+    public TreeNode max() {
        if (rightChild == null)
            return this;
        else
@@ -123,6 +123,30 @@ public class TreeNode {
         this.rightChild = rightChild;
     }
 
+    public TreeNode deleteNode(int key){
+        if(key<data){
+            if(leftChild!=null)
+                leftChild = leftChild.deleteNode(key);
+        }
+        else if(key>data){
+            if(rightChild!=null)
+                rightChild = rightChild.deleteNode(key);
+        }
+        else{
+            if(leftChild!=null&&rightChild!=null){
+                TreeNode minNode = rightChild.min();
+                data = minNode.data;
+                rightChild = rightChild.deleteNode(minNode.data);
+            }
+            else if(leftChild!=null)
+                return leftChild;
+            else if(rightChild!=null)
+                return rightChild;
+            else
+                return null;
+        }
+        return this;
+    }
     @Override
     public String toString() {
         return "TreeNode{" +

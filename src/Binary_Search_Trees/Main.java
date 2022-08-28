@@ -31,6 +31,30 @@ public class Main {
         System.out.println(intTree.get(26));
         System.out.println(intTree.min());
         System.out.println(intTree.max());
+        intTree.deleteNode(10);
+        System.out.println("10 deleted");
+        intTree.traverseLevelOrder();
+        System.out.println();
+        intTree.deleteNode(24);
+        System.out.println("24 deleted");
+        intTree.traverseLevelOrder();
+        System.out.println();
+        intTree.deleteNode(43);
+        System.out.println("43 deleted");
+        intTree.traverseLevelOrder();
+        System.out.println();
+        intTree.deleteNode(35);
+        System.out.println("35 deleted");
+        intTree.traverseLevelOrder();
+        System.out.println();
+        intTree.deleteNode(2343);
+        System.out.println("2343 deleted");
+        intTree.traverseLevelOrder();
+        System.out.println();
+        intTree.deleteNode(324);
+        System.out.println("324 deleted");
+        intTree.traverseLevelOrder();
+        System.out.println();
 
     }
 }

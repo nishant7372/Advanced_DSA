@@ -1,6 +1,6 @@
 # ***Binary_Trees***
 
-#### *The whole Implementation is done using Class in Java.*
+#### *Class Based Implementation in Java.*
 
 ## ***Operations Available:-***
 

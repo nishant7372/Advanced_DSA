@@ -1,4 +1,4 @@
-package Basic_Trees_Nary;
+package Trees.Basic_Trees_Nary;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Basic_Trees_Nary;
+package Trees.Basic_Trees_Nary;
 
 import java.util.ArrayList;
 import java.util.List;

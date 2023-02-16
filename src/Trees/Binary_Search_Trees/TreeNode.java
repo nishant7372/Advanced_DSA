@@ -1,4 +1,4 @@
-package Binary_Search_Trees;
+package Trees.Binary_Search_Trees;
 
 import java.util.Queue;
 

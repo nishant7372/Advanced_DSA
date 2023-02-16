@@ -1,4 +1,4 @@
-package Binary_Trees;
+package Trees.Binary_Trees;
 
 import java.util.LinkedList;
 import java.util.Queue;

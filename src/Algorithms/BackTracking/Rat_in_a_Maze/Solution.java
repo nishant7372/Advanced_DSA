@@ -1,4 +1,4 @@
-package Algorithms.DepthFirstSearch.Rat_in_a_Maze;
+package Algorithms.BackTracking.Rat_in_a_Maze;
 
 import java.util.ArrayList;
 

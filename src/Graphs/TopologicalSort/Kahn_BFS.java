@@ -33,7 +33,7 @@ public class Kahn_BFS
             res[k++] = curr;
 
             for(int x:adj.get(curr)){
-                if(inDegree[x]--==1){
+                if(--inDegree[x]==0){
                     queue.add(x);
                 }
             }

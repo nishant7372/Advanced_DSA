@@ -3,7 +3,9 @@ package Graphs.TopologicalSort;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class DFS {
+// Tested - GFG
+
+public class DFS_Intutive {
     //Function to return list containing vertices in Topological order.
     public int[] topologicalSort(int V, ArrayList<ArrayList<Integer>> adj)
     {
@@ -22,9 +24,9 @@ public class DFS {
         }
         return res;
     }
+ 
 
-
-    private static void dfs(int node, boolean[] vis,ArrayList<ArrayList<Integer>> adj, Stack<Integer> st){
+    private void dfs(int node, boolean[] vis,ArrayList<ArrayList<Integer>> adj, Stack<Integer> st){
         if(vis[node]){
             return;
         }
